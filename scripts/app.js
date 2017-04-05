@@ -1,4 +1,3 @@
-var giphy_api = "http://api.giphy.com/v1/gifs/search";
 
 $(document).on("ready", function(){
   searchGifs();
@@ -22,7 +21,7 @@ function searchGifs() {
 
 function onSuccess(json) {
   $(".gif-img").remove();
-  json.data.forEach(function(data,i){
+  json.data.forEach(function(data){
     $(".gif-gallery").append($("<img class='gif-img' src="+data.images.fixed_height.url+">"));
   });
 }
